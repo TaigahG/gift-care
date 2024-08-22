@@ -1,0 +1,39 @@
+{
+  "canisters": {
+    "dapps-donate-backend": {
+      "build": "npx azle dapps-donate-backend",
+      "candid": "src/dapps-donate-backend/dapps-donate-backend.did",
+      "gzip": true,
+      "main": "src/dapps-donate-backend/src/index.ts",
+      "tech_stack": {
+        "cdk": {
+          "azle": {}
+        },
+        "language": {
+          "javascript": {},
+          "typescript": {}
+        }
+      },
+      "type": "custom",
+      "wasm": ".azle/dapps-donate-backend/dapps-donate-backend.wasm"
+    },
+    "dapps-donate-frontend": {
+      "dependencies": [
+        "dapps-donate-backend"
+      ],
+      "source": [
+        "src/dapps-donate-frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "dapps-donate-frontend"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
